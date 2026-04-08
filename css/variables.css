@@ -1,0 +1,83 @@
+:root {
+  /* Colors - matching Nitro template */
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #111111;
+  --color-bg-card: #141414;
+  --color-bg-card-hover: #1a1a1a;
+  --color-surface: #0f0f0f;
+  
+  --color-text: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --color-text-muted: rgba(255, 255, 255, 0.3);
+  
+  --color-accent: #5de66d;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(255, 255, 255, 0.05);
+  
+  /* Typography - Manrope */
+  --font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 15px;
+  --font-size-md: 17px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 56px;
+  --font-size-5xl: 72px;
+  --font-size-hero: clamp(40px, 6vw, 80px);
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+  
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+  
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-base: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 100px;
+  
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 600ms;
+  
+  /* Layout */
+  --container-width: 1200px;
+  --container-padding: 24px;
+  --header-height: 64px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 16px;
+    --header-height: 56px;
+  }
+}

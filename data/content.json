@@ -1,0 +1,115 @@
+{
+  "site": {
+    "name": "nitro",
+    "logo": ".nitro",
+    "templateUrl": "https://framer.link/MvMdlCP"
+  },
+  "navigation": {
+    "links": [
+      { "label": "projects", "url": "/projects" },
+      { "label": "about", "url": "/about" },
+      { "label": "notes", "url": "/blog" },
+      { "label": "contact", "url": "/contact" }
+    ],
+    "cta": {
+      "label": "get template",
+      "url": "https://framer.link/MvMdlCP"
+    }
+  },
+  "hero": {
+    "greeting": "Hey, I'm Nick",
+    "status": "available for new projects",
+    "headline": "a product design partner with focus on",
+    "rotatingWords": ["no-code websites", "software interfaces"]
+  },
+  "projects": [
+    {
+      "id": "bizzbuzz",
+      "year": "2023",
+      "category": "Personal Project",
+      "title": "bizz buzz",
+      "url": "/work/bizzbuzz/",
+      "image": "assets/projects/bizzbuzz.jpg"
+    },
+    {
+      "id": "aquaflow",
+      "year": "2023",
+      "category": "Branding and Identity",
+      "title": "aquaflow",
+      "url": "/work/aquaflow/",
+      "image": "assets/projects/aquaflow.jpg"
+    },
+    {
+      "id": "snackify",
+      "year": "2023",
+      "category": "UI/UX",
+      "title": "snackify",
+      "url": "/work/snackify/",
+      "image": "assets/projects/snackify.jpg"
+    },
+    {
+      "id": "zengo",
+      "year": "2023",
+      "category": "Personal Project",
+      "title": "zengo",
+      "url": "/work/zengo/",
+      "image": "assets/projects/zengo.jpg"
+    },
+    {
+      "id": "roverride",
+      "year": "2023",
+      "category": "Branding and Identity",
+      "title": "roverride",
+      "url": "/work/roverride/",
+      "image": "assets/projects/roverride.jpg"
+    }
+  ],
+  "about": {
+    "sectionLabel": ".about",
+    "description": "my craft is building experiences that bring value to people and celebrate function over form. let's hide the ego and give some freedom to creativity and make the first small step changing the world to a better place",
+    "ctaLabel": "about me",
+    "ctaUrl": "/about"
+  },
+  "blog": {
+    "sectionLabel": ".three latest notes",
+    "posts": [
+      {
+        "id": "career-web-design",
+        "title": "Starting and Growing a Career in Web Design",
+        "date": "Apr 8, 2022",
+        "url": "/blog/starting-a-career-in-web-design"
+      },
+      {
+        "id": "landing-page",
+        "title": "Create a Landing Page That Performs Great",
+        "date": "Mar 15, 2022",
+        "url": "/blog/create-a-landing-page-that-performs-great"
+      },
+      {
+        "id": "designers-future",
+        "title": "How Can Designers Prepare for the Future?",
+        "date": "Feb 28, 2022",
+        "url": "/blog/how-can-designers-prepare-for-the-future"
+      }
+    ],
+    "ctaLabel": "visit blog",
+    "ctaUrl": "/blog"
+  },
+  "contact": {
+    "sectionLabel": ".say hello",
+    "headline": "i'm open for freelance projects, feel free to email me to see how can we collaborate",
+    "ctaLabel": "contact me",
+    "ctaUrl": "/contact"
+  },
+  "footer": {
+    "credit": {
+      "label": "easyfast.design",
+      "url": "https://easyfast.design/"
+    },
+    "promo": {
+      "label": "New template",
+      "badge": "NEW",
+      "url": "https://dub.sh/makro-new"
+    }
+  }
+}
