@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeadingCycler from '../../framer/heading-cycler'
 import Button from '../../framer/button'
+import abstractSocialVideo from '../../assets/abstract_social2.mp4'
 
 const projects = [
   {
@@ -32,6 +33,19 @@ const projects = [
   },
   {
     id: 3,
+    title: "Social Media Management",
+    category: "Social Media",
+    year: "2025",
+    link: "/services/social-media",
+    background: "#E1306C",
+    textColor: "#FFFFFF",
+    image: "/images/social-media.png",
+    video: abstractSocialVideo,
+    subtitle: "Strategie și management de social media pentru creștere organică și engagement constant.",
+    tags: ["Strategie de conținut pentru social media", "Creare și programare de postări", "Community management și engagement", "Monitorizare și raportare de performanță", "Campanii organice și colaborări"]
+  },
+  {
+    id: 4,
     title: "Design & Innovation",
     category: "UI/UX",
     year: "2025",
@@ -44,7 +58,7 @@ const projects = [
     tags: ["Design UX și UI", "Prototipare și testare cu utilizatori", "Design de produse și servicii digitale", "Iterare și validare", "Planificare de lansare și suport"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Development",
     category: "Dezvoltare Web",
     year: "2025",
@@ -58,7 +72,7 @@ const projects = [
     tags: ["Website-uri de prezentare", "Landing pages și pagini de conversie", "Magazine online", "Dezvoltare web custom", "Optimizare tehnică și mentenanță"]
   },
   {
-    id: 5,
+    id: 6,
     title: "SEO & GEO",
     category: "Optimizare Search",
     year: "2025",
@@ -72,7 +86,7 @@ const projects = [
     tags: ["Audit SEO și analiză tehnică", "Optimizare on-page și structură de conținut", "Strategie editorială pentru creștere organică", "Optimizare pentru vizibilitate în medii AI", "Monitorizare, ajustare și creștere continuă"]
   },
   {
-    id: 6,
+    id: 7,
     title: "AI Systems",
     category: "Inteligență Artificială",
     year: "2025",
@@ -207,7 +221,17 @@ function ProjectCard({ project, index, total, cardRef }) {
           <div className="project-card-image">
             {project.video ? (
               <>
-              <video autoPlay muted loop playsInline style={project.videoCrop ? { transform: `scale(${project.videoCrop})` } : undefined}>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={
+                  project.videoCrop != null
+                    ? { '--video-scale': project.videoCrop }
+                    : undefined
+                }
+              >
                 <source src={project.video} type="video/mp4" />
               </video>
                 <div className="project-card-video-overlay">

@@ -413,11 +413,13 @@ body {
 
 .project-card-image video {
   mix-blend-mode: normal;
-  transform: scale(1.35);
+  /* --video-scale opțional din JSX pentru clipuri care au nevoie de zoom mai mare */
+  --video-hover-ratio: 1.0222222222; /* 1.38 / 1.35 — același „lift” la hover pe orice zoom de bază */
+  transform: scale(var(--video-scale, 1.35));
 }
 
 .project-card:hover .project-card-image video {
-  transform: scale(1.38);
+  transform: scale(calc(var(--video-scale, 1.35) * var(--video-hover-ratio)));
 }
 
 .project-card-video-overlay {
@@ -466,8 +468,7 @@ body {
   position: relative;
 }
 
-.project-card:hover .project-card-image img,
-.project-card:hover .project-card-image video {
+.project-card:hover .project-card-image img {
   transform: scale(1.03);
 }
 
