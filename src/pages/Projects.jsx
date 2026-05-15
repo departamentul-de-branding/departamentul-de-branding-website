@@ -3,58 +3,69 @@ import { Link } from 'react-router-dom'
 const projects = [
   {
     id: 1,
-    title: "bizz buzz",
-    category: "Personal Project",
-    year: "2023",
-    link: "/work/bizzbuzz/",
+    title: "Brand Strategy & Identity",
+    category: "Brand Strategy & Identity",
+    year: "2026",
+    link: "/services/brand-identity",
     background: "#ff6200",
     textColor: "#000",
-    description: "Branding and website design",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"]
+    description: "Poziționare, direcție vizuală, mesaje și sistem de brand pregătit pentru comunicare.",
+    tags: ["Strategie", "Identitate", "Brand book"]
   },
   {
     id: 2,
-    title: "aquaflow",
-    category: "Branding and Identity",
-    year: "2023",
-    link: "/work/aquaflow/",
+    title: "Marketing & Growth Strategy",
+    category: "Marketing & Growth",
+    year: "2026",
+    link: "/services/strategy",
     background: "#f5f5f5",
     textColor: "#0066ff",
-    description: "E-commerce platform redesign",
-    tags: ["React", "Node.js", "Stripe"]
+    description: "Strategii, campanii, funnel-uri și planuri de acțiune construite în jurul obiectivelor de business.",
+    tags: ["Audit", "Campanii", "Growth"]
   },
   {
     id: 3,
-    title: "snackify",
-    category: "UI/UX",
-    year: "2023",
-    link: "/work/snackify/",
-    background: "#ffcc00",
-    textColor: "#000",
-    description: "Mobile app design",
-    tags: ["Figma", "React Native", "Firebase"]
+    title: "Social Media Management",
+    category: "Social Media Management",
+    year: "2026",
+    link: "/services/social-media",
+    background: "#E1306C",
+    textColor: "#fff",
+    description: "Prezență social media gestionată complet: strategie, conținut, publicare, community management și optimizare lunară.",
+    tags: ["Strategie", "Content", "Community"]
   },
   {
     id: 4,
-    title: "zengo",
-    category: "Personal Project",
-    year: "2023",
-    link: "/work/zengo/",
-    background: "#1a1a2e",
-    textColor: "#4ade80",
-    description: "Meditation app experience",
-    tags: ["Swift", "SwiftUI", "CloudKit"]
+    title: "Web, UX & Digital Products",
+    category: "Web & Digital Products",
+    year: "2026",
+    link: "/services/web-digital",
+    background: "#ffcc00",
+    textColor: "#000",
+    description: "Website-uri, landing pages, interfețe și produse digitale gândite pentru claritate și conversie.",
+    tags: ["UI", "UX", "Web"]
   },
   {
     id: 5,
-    title: "roverride",
-    category: "Branding and Identity",
-    year: "2023",
-    link: "/work/roverride/",
+    title: "SEO & Organic Visibility",
+    category: "SEO & GEO",
+    year: "2026",
+    link: "/services/seo",
     background: "#2d2d2d",
     textColor: "#fff",
-    description: "Automotive digital transformation",
-    tags: ["WebGL", "Three.js", "GSAP"]
+    description: "Optimizare tehnică, structură de conținut și creștere organică în search și medii AI.",
+    tags: ["SEO", "Conținut", "GEO"]
+  },
+  {
+    id: 6,
+    title: "AI, Automation & Intelligence",
+    category: "AI & Automation",
+    year: "2026",
+    link: "/services/ai",
+    background: "#7C3AED",
+    textColor: "#fff",
+    description: "Automatizări, chatbot-uri, agenți AI și sisteme inteligente pentru procese mai rapide.",
+    tags: ["AI", "Automatizare", "Integrare"]
   },
 ]
 
@@ -63,10 +74,10 @@ export default function Projects() {
     <div className="page-content">
       <section className="page-hero">
         <div className="container">
-          <span className="section-tag">// WORK</span>
-          <h1 className="page-title">Selected Work</h1>
+          <span className="section-tag">// SERVICII</span>
+          <h1 className="page-title">Servicii și direcții de lucru</h1>
           <p className="page-subtitle">
-            A collection of projects spanning brand identity, digital products, and websites.
+            Branding, marketing, social media, web, SEO și AI — conectate într-un sistem coerent pentru vizibilitate, consistență și creștere.
           </p>
         </div>
       </section>
@@ -75,11 +86,11 @@ export default function Projects() {
         <div className="container">
           <div className="work-grid">
             {projects.map((project) => (
-              <Link 
-                key={project.id} 
-                to={project.link} 
+              <Link
+                key={project.id}
+                to={project.link}
                 className="work-card"
-                style={{ background: project.background }}
+                style={{ background: project.background, color: project.textColor }}
               >
                 <div className="work-card-header">
                   <div className="work-card-logo" style={{ color: project.textColor }}>◆</div>
@@ -94,18 +105,18 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="work-card-footer">
-                  <span className="work-card-year" style={{ color: project.textColor, opacity: 0.5 }}>YR/ {project.year}</span>
+                  <span className="work-card-year" style={{ color: project.textColor, opacity: 0.5 }}>AN/ {project.year}</span>
                   <span className="work-card-category" style={{ color: project.textColor, opacity: 0.5 }}>{project.category}</span>
                 </div>
                 <div className="work-card-image"></div>
               </Link>
             ))}
           </div>
-          
+
           <div className="work-footer">
-            <span className="work-footer-years">2017-2025</span>
+            <span className="work-footer-years">Departament activ / 2026</span>
             <Link to="/contact" className="work-footer-link">
-              More Projects <span className="work-footer-count">5</span>
+              Discută un proiect <span className="work-footer-count">6</span>
             </Link>
           </div>
         </div>

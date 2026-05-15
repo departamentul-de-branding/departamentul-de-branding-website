@@ -1,0 +1,17 @@
+{
+  "name": "Departamentul de Branding",
+  "short_name": "DDB",
+  "description": "Studio de marketing, branding și digital.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#FF6B00",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

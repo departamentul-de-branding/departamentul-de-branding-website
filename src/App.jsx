@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import '../framer/styles.css'
 import './App.css'
 
@@ -10,6 +11,60 @@ import Notes from './pages/Notes'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 
+const siteUrl = 'https://departamentuldebranding.ro'
+
+const routeMeta = {
+  '/': {
+    title: 'Departamentul de Branding | Marketing, Branding, Web, SEO și AI',
+    description: 'Studio de marketing, branding și digital pentru businessuri care vor mai multă claritate, vizibilitate și creștere coerentă.'
+  },
+  '/projects': {
+    title: 'Servicii | Departamentul de Branding',
+    description: 'Branding, marketing, social media, web, SEO și AI conectate într-un sistem coerent pentru vizibilitate, consistență și creștere.'
+  },
+  '/about': {
+    title: 'Despre Noi | Departamentul de Branding',
+    description: 'Un studio de marketing, branding și digital pentru businessuri care vor mai multă claritate, vizibilitate și control.'
+  },
+  '/notes': {
+    title: 'Note | Brand, Marketing, Digital și AI',
+    description: 'Idei despre brand, marketing, conținut, digital și AI pentru businessuri care vor să devină mai clare și mai vizibile.'
+  },
+  '/blog': {
+    title: 'Note | Brand, Marketing, Digital și AI',
+    description: 'Idei despre brand, marketing, conținut, digital și AI pentru businessuri care vor să devină mai clare și mai vizibile.'
+  },
+  '/contact': {
+    title: 'Contact | Departamentul de Branding',
+    description: 'Hai să vorbim despre proiectul tău: branding, marketing, social media, website, SEO, automatizări sau strategie de creștere.'
+  }
+}
+
+function setMeta(selector, value, attr = 'content') {
+  const element = document.head.querySelector(selector)
+  if (element) element.setAttribute(attr, value)
+}
+
+function MetaManager() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const meta = routeMeta[location.pathname] || routeMeta['/']
+    const canonical = `${siteUrl}${location.pathname === '/' ? '/' : location.pathname}`
+
+    document.title = meta.title
+    setMeta('meta[name="description"]', meta.description)
+    setMeta('meta[property="og:title"]', meta.title)
+    setMeta('meta[property="og:description"]', meta.description)
+    setMeta('meta[property="og:url"]', canonical)
+    setMeta('meta[name="twitter:title"]', meta.title)
+    setMeta('meta[name="twitter:description"]', meta.description)
+    setMeta('link[rel="canonical"]', canonical, 'href')
+  }, [location.pathname])
+
+  return null
+}
+
 function Header() {
   return (
     <header className="header">
@@ -17,7 +72,7 @@ function Header() {
         <div className="header-left">
           <Link to="/" className="logo">.departamentul de<br /><span className="logo-accent">branding</span></Link>
           <nav className="nav-desktop">
-            <Link to="/projects" className="nav-link">proiecte</Link>
+            <Link to="/projects" className="nav-link">servicii</Link>
             <Link to="/about" className="nav-link">despre</Link>
             <Link to="/notes" className="nav-link">note</Link>
             <Link to="/contact" className="nav-link">contact</Link>
@@ -34,10 +89,10 @@ function AppFooter() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-left">
-          <a href="https://easyfast.design/" className="footer-link" target="_blank" rel="noopener noreferrer">easyfast.design</a>
+          <Link to="/" className="footer-link">.departamentul de branding</Link>
         </div>
         <nav className="footer-nav">
-          <Link to="/projects" className="footer-link">proiecte</Link>
+          <Link to="/projects" className="footer-link">servicii</Link>
           <Link to="/about" className="footer-link">despre</Link>
           <Link to="/notes" className="footer-link">note</Link>
           <Link to="/contact" className="footer-link">contact</Link>
@@ -58,6 +113,7 @@ export default function App() {
           <span /><span /><span /><span /><span /><span /><span /><span /><span />
         </div>
         <div className="bg-grain" />
+        <MetaManager />
         <Header />
         <main>
           <Routes>

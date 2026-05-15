@@ -3,10 +3,10 @@ export default function Contact() {
     <div className="page-content">
       <section className="page-hero">
         <div className="container">
-          <span className="section-label">.say hello</span>
-          <h1 className="page-title">Let's Work Together</h1>
+          <span className="section-label">.contact</span>
+          <h1 className="page-title">Hai să vorbim despre proiectul tău.</h1>
           <p className="page-subtitle">
-            I'm open for freelance projects, feel free to email me to see how we can collaborate
+            Scrie-ne ce vrei să construiești, ce nu mai funcționează și ce rezultat vrei să obții — mai multă claritate, mai multă vizibilitate, un website mai bun, social media, SEO, automatizări sau o strategie completă de creștere.
           </p>
         </div>
       </section>
@@ -17,28 +17,26 @@ export default function Contact() {
             <div className="contact-info">
               <div className="contact-item">
                 <span className="contact-label">Email</span>
-                <a href="mailto:hello@nitro.design" className="contact-value">hello@nitro.design</a>
+                <a href="mailto:hello@departamentuldebranding.ro" className="contact-value">hello@departamentuldebranding.ro</a>
               </div>
-              
+
               <div className="contact-item">
-                <span className="contact-label">Location</span>
-                <span className="contact-value">San Francisco, CA</span>
+                <span className="contact-label">Locație</span>
+                <span className="contact-value">România / remote</span>
               </div>
-              
+
               <div className="contact-item">
-                <span className="contact-label">Availability</span>
+                <span className="contact-label">Disponibilitate</span>
                 <span className="contact-value contact-available">
                   <span className="status-dot"></span>
-                  Available for new projects
+                  Disponibili pentru proiecte noi
                 </span>
               </div>
             </div>
 
             <div className="contact-socials">
-              <span className="contact-label">Find me on</span>
+              <span className="contact-label">Ne găsești și aici</span>
               <div className="social-links">
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">Twitter</a>
-                <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" className="social-link">Dribbble</a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">Instagram</a>
               </div>

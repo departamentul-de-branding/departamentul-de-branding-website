@@ -2,101 +2,118 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeadingCycler from '../../framer/heading-cycler'
 import Button from '../../framer/button'
-import abstractSocialVideo from '../../assets/abstract_social2.mp4'
+import headAnimation from '../../assets/animation_final.mp4'
 
 const projects = [
   {
     id: 1,
-    title: "Brand Identity",
-    category: "Branding și Identitate",
-    year: "2025",
+    title: "Brand Strategy & Identity",
+    category: "Branding & Identitate",
+    year: "2026",
     link: "/services/brand-identity",
     background: "#FF6B00",
     textColor: "#000000",
-    image: "/images/brand-identity.png",
-    video: "/images/abstract.mp4",
-    subtitle: "Identitate nouă și sistem de comunicare pentru un brand aflat în proces de repoziționare.",
-    tags: ["Poziționare de brand și arhitectură de mesaje", "Sisteme de identitate vizuală", "Ghiduri de brand pentru utilizare coerentă", "Sisteme de brand gândite pentru digital", "Asset-uri de brand pentru campanii și canale de comunicare"]
+    image: "/images/service-brand-orange-v2.png",
+    subtitle: "Construim identități de brand clare, coerente și ușor de recunoscut — de la poziționare și mesaj până la sistem vizual complet.",
+    tags: [
+      "Strategie de brand și poziționare",
+      "Arhitectură de mesaje și tone of voice",
+      "Logo, culori, fonturi și direcție vizuală",
+      "Brand book și reguli de utilizare",
+      "Asset-uri pentru social media, website și campanii"
+    ]
   },
   {
     id: 2,
-    title: "Marketing Strategy",
-    category: "Strategie",
-    year: "2025",
+    title: "Marketing & Growth Strategy",
+    category: "Marketing & Strategie",
+    year: "2026",
     link: "/services/strategy",
     background: "#FFFFFF",
     textColor: "#4400FF",
-    image: "/images/marketing-strategy.png",
-    video: "/images/abstract_marketing.mp4",
-    subtitle: "Strategie, design și dezvoltare pentru o prezență digitală mai clară și mai eficientă.",
-    tags: ["Cercetare de piață și analiză de audiență", "Strategie de produs și campanii", "Maparea parcursului utilizatorului", "Planuri de implementare și rollout", "Workshop-uri de aliniere și clarificare strategică"]
+    image: "/images/service-strategy-blue-v2.png",
+    subtitle: "Transformăm obiectivele de business în strategii de comunicare, campanii și trasee clare de conversie.",
+    tags: [
+      "Audit de brand, marketing și comunicare",
+      "Cercetare de piață, public și competiție",
+      "Strategie de campanie și plan de acțiune",
+      "Funnel-uri de conversie și lead generation",
+      "Calendar de implementare și raportare"
+    ]
   },
   {
     id: 3,
     title: "Social Media Management",
     category: "Social Media",
-    year: "2025",
+    year: "2026",
     link: "/services/social-media",
     background: "#E1306C",
     textColor: "#FFFFFF",
-    image: "/images/social-media.png",
-    video: abstractSocialVideo,
-    subtitle: "Strategie și management de social media pentru creștere organică și engagement constant.",
-    tags: ["Strategie de conținut pentru social media", "Creare și programare de postări", "Community management și engagement", "Monitorizare și raportare de performanță", "Campanii organice și colaborări"]
+    image: "/images/service-social-pink-v2.png",
+    subtitle: "Gestionăm complet prezența brandului tău în social media — de la strategie și creație până la interacțiunea cu audiența și optimizarea rezultatelor.",
+    tags: [
+      "Strategie de conținut: target, obiective, tone of voice și direcție vizuală",
+      "Plan editorial lunar și copywriting pentru postări",
+      "Creare și administrare conturi: Instagram, Facebook, TikTok",
+      "Producție content: foto, video și materiale pentru campanii",
+      "Editare foto/video: Reels, TikTok, stories și grafică social media",
+      "Community management: comentarii, mesaje și engagement",
+      "Raportare lunară și recomandări de optimizare"
+    ]
   },
   {
     id: 4,
-    title: "Design & Innovation",
-    category: "UI/UX",
-    year: "2025",
-    link: "/services/design",
+    title: "Web, UX & Digital Products",
+    category: "Web & Digital",
+    year: "2026",
+    link: "/services/web-digital",
     background: "#FFD000",
     textColor: "#000000",
-    image: "/images/design-innovation.png",
-    video: "/images/abstract_design.mp4",
-    subtitle: "Website și structură de conținut construite pentru performanță și scalare.",
-    tags: ["Design UX și UI", "Prototipare și testare cu utilizatori", "Design de produse și servicii digitale", "Iterare și validare", "Planificare de lansare și suport"]
+    image: "/images/service-design-yellow-v2.png",
+    subtitle: "Creăm website-uri, landing pages și experiențe digitale clare, rapide și orientate spre conversie.",
+    tags: [
+      "UX/UI design pentru website-uri și produse digitale",
+      "Website-uri de prezentare și landing pages",
+      "Magazine online și platforme digitale",
+      "Prototipare, testare și iterare",
+      "Dezvoltare web custom și mentenanță"
+    ]
   },
   {
     id: 5,
-    title: "Development",
-    category: "Dezvoltare Web",
-    year: "2025",
-    link: "/services/development",
-    background: "#0A0A1A",
-    textColor: "#22C55E",
-    image: "/images/development.png",
-    video: "/images/abstract_development.mp4",
-    videoCrop: 1.6,
-    subtitle: "Experiență digitală regândită pentru un produs care avea nevoie de mai multă claritate.",
-    tags: ["Website-uri de prezentare", "Landing pages și pagini de conversie", "Magazine online", "Dezvoltare web custom", "Optimizare tehnică și mentenanță"]
-  },
-  {
-    id: 6,
-    title: "SEO & GEO",
-    category: "Optimizare Search",
-    year: "2025",
+    title: "SEO & Organic Visibility",
+    category: "SEO & GEO",
+    year: "2026",
     link: "/services/seo",
     background: "#1A1A1A",
     textColor: "#FFFFFF",
-    image: "/images/seo-geo.png",
-    video: "/images/abstract_seo.mp4",
-    videoCrop: 1.8,
-    subtitle: "Sistem vizual și rollout de campanie pentru un brand într-o nouă etapă de creștere.",
-    tags: ["Audit SEO și analiză tehnică", "Optimizare on-page și structură de conținut", "Strategie editorială pentru creștere organică", "Optimizare pentru vizibilitate în medii AI", "Monitorizare, ajustare și creștere continuă"]
+    image: "/images/service-seo-mono-v2.png",
+    subtitle: "Optimizăm website-uri și conținut pentru vizibilitate organică în Google, motoare de căutare și medii asistate de AI.",
+    tags: [
+      "Audit SEO și analiză tehnică",
+      "Keyword research și strategie de conținut",
+      "Optimizare on-page și structură website",
+      "SEO local și optimizare Google Business Profile",
+      "Optimizare pentru vizibilitate în AI search / GEO"
+    ]
   },
   {
-    id: 7,
-    title: "AI Systems",
-    category: "Inteligență Artificială",
-    year: "2025",
+    id: 6,
+    title: "AI, Automation & Intelligence",
+    category: "AI & Automatizare",
+    year: "2026",
     link: "/services/ai",
     background: "#7C3AED",
     textColor: "#FFFFFF",
-    image: "/images/ai-systems.png",
-    video: "/images/abstract_ai.mp4",
-    subtitle: "Automatizare și integrare AI pentru procese mai rapide și mai bine organizate.",
-    tags: ["Automatizări bazate pe AI", "Asistenți conversaționali și agenți AI", "Integrare AI în procese și fluxuri interne", "Sisteme inteligente pentru suport, vânzări sau operațiuni", "Soluții AI custom, adaptate contextului de business"]
+    image: "/images/service-ai-purple-v2.png",
+    subtitle: "Construim soluții AI și automatizări care reduc munca repetitivă, accelerează procesele și conectează mai bine marketingul, vânzările și suportul.",
+    tags: [
+      "Automatizări bazate pe AI",
+      "Chatbot-uri, asistenți conversaționali și agenți AI",
+      "Integrare AI în fluxuri interne și website-uri",
+      "Sisteme pentru suport, lead qualification și operațiuni",
+      "Dashboard-uri, procese inteligente și soluții custom"
+    ]
   }
 ]
 
@@ -104,102 +121,138 @@ const plans = [
   {
     id: 1,
     number: "01",
-    name: "Core",
-    subtitle: "Plan de Start",
-    description: "Pentru startup-uri și primele lansări",
-    timeline: "2-3 săptămâni",
-    tagline: "Simplu, rapid și eficient — ca să te poți concentra pe creșterea business-ului.",
+    name: "Launch",
+    subtitle: "Pentru businessuri noi, startup-uri și proiecte aflate la început",
+    description: "Durată orientativă: 2–3 săptămâni",
+    timeline: "2–3 săptămâni",
+    tagline: "Un pachet pentru branduri care au nevoie de o fundație clară: identitate, mesaj, prezență digitală și materiale esențiale pentru lansare.",
+    cta: "Începe un proiect",
     features: [
-      "Kit de identitate de brand",
-      "Design website (pagini principale)",
-      "Revizuiri standard",
-      "Setup SEO de bază",
-      "Imagini stock nelimitate",
-      "Fișiere sursă native incluse",
-      "Livrare finală completă"
+      "Direcție de brand și mesaje principale",
+      "Kit de identitate vizuală",
+      "Setup social media de bază",
+      "Design pentru website sau landing page",
+      "SEO de bază pentru lansare",
+      "Materiale vizuale pentru comunicare",
+      "Fișiere finale pregătite pentru utilizare",
+      "Milestone-uri clare de la început până la final"
     ],
-    extras: [
-      "Milestone-uri clare de la început până la final",
-      "Te ținem la curent pe tot parcursul",
-      "Feedback integrat în proces"
-    ]
+    extras: []
   },
   {
     id: 2,
     number: "02",
-    name: "Studio",
-    subtitle: "Plan Avansat",
-    description: "Pentru echipe în creștere și proiecte serioase",
-    timeline: "4-6 săptămâni",
-    tagline: "Pachet complet cu flexibilitate, design avansat și suportul de care ai nevoie pentru a crește mai rapid.",
+    name: "Presence",
+    subtitle: "Pentru branduri care vor o prezență coerentă și activă",
+    description: "Durată orientativă: colaborare lunară sau proiect dedicat",
+    timeline: "Lunar sau proiect dedicat",
+    tagline: "Un pachet pentru businessuri care au deja o bază, dar au nevoie de consistență în comunicare, social media, conținut și vizibilitate.",
+    cta: "Construiește prezența brandului",
     features: [
-      "Branding extins",
-      "Design website complet",
-      "Fluxuri UX și design de produs",
-      "Revizuiri nelimitate",
-      "SEO avansat și conținut",
-      "Suport prioritar",
-      "Livrare finală"
+      "Strategie de conținut",
+      "Plan editorial lunar",
+      "Copywriting și design pentru social media",
+      "Administrare Instagram, Facebook și TikTok",
+      "Producție și editare foto/video",
+      "Community management",
+      "Raportare lunară și recomandări de optimizare",
+      "Direcție creativă pentru campanii"
     ],
-    extras: [
-      "Design mai profund pentru nevoi complexe",
-      "Ajustări nelimitate înainte de lansare",
-      "Răspunsuri rapide când ai nevoie de noi"
-    ]
+    extras: []
   },
   {
     id: 3,
     number: "03",
-    name: "Scale",
-    subtitle: "Plan de Creștere",
-    description: "Pentru echipe stabilite și creștere pe termen lung",
-    timeline: "6-8 săptămâni",
-    tagline: "Strategie, design și suport dedicat pentru proiecte complexe care necesită scalabilitate și rafinament.",
+    name: "Growth",
+    subtitle: "Pentru businessuri care vor mai multă vizibilitate, leaduri și conversii",
+    description: "Durată orientativă: 4–6 săptămâni sau colaborare recurentă",
+    timeline: "4–6 săptămâni sau recurent",
+    tagline: "Un pachet pentru echipe care au nevoie de strategie, campanii, funnel-uri, conținut, SEO și optimizare continuă.",
+    cta: "Crește mai clar",
     features: [
-      "Strategie de brand end-to-end",
-      "Website complex cu CMS",
-      "Design UX și produs avansat",
-      "Manageri seniori dedicați",
-      "Micro-interacțiuni avansate",
-      "Optimizare și suport",
-      "Livrare la nivel enterprise"
+      "Audit de brand, marketing și comunicare",
+      "Strategie de marketing și plan de acțiune",
+      "Funnel-uri de conversie și lead generation",
+      "Campanii organice și/sau plătite",
+      "SEO on-page și strategie de conținut",
+      "Landing pages sau pagini de conversie",
+      "Raportare și optimizare periodică",
+      "Recomandări pentru creștere pe termen lung"
     ],
-    extras: [
-      "Soluții scalabile gândite pentru creștere",
-      "Manager dedicat care ghidează fiecare etapă",
-      "Suport pe termen lung, dincolo de lansare"
-    ]
+    extras: []
+  },
+  {
+    id: 4,
+    number: "04",
+    name: "Transform",
+    subtitle: "Pentru businessuri care au nevoie de repoziționare, website nou sau sistem digital complet",
+    description: "Durată orientativă: 6–8 săptămâni",
+    timeline: "6–8 săptămâni",
+    tagline: "Un pachet pentru companii care au crescut, dar brandul, website-ul sau comunicarea nu mai reflectă nivelul actual al businessului.",
+    cta: "Transformă brandul",
+    features: [
+      "Audit de brand și prezență digitală",
+      "Strategie de repoziționare",
+      "Identitate vizuală extinsă",
+      "Website complex sau platformă digitală",
+      "UX/UI pentru fluxuri importante",
+      "SEO tehnic și structură de conținut",
+      "Campanie de relansare",
+      "Suport pentru implementare și rollout"
+    ],
+    extras: []
+  },
+  {
+    id: 5,
+    number: "05",
+    name: "Scale",
+    subtitle: "Pentru businessuri care vor automatizare, eficiență și sisteme inteligente",
+    description: "Durată orientativă: în funcție de complexitate",
+    timeline: "În funcție de complexitate",
+    tagline: "Un pachet pentru echipe care vor să folosească tehnologia și AI-ul pentru a automatiza procese, a reduce munca repetitivă și a scala operațiunile.",
+    cta: "Scalează cu AI",
+    features: [
+      "Audit de procese și oportunități de automatizare",
+      "Automatizări AI pentru marketing, vânzări sau suport",
+      "Chatbot-uri, asistenți conversaționali sau agenți AI",
+      "Integrare cu website, CRM, formulare sau tool-uri interne",
+      "Dashboard-uri și raportare inteligentă",
+      "Sisteme pentru lead qualification sau customer support",
+      "Soluții custom adaptate contextului de business",
+      "Suport și optimizare după implementare"
+    ],
+    extras: []
   }
 ]
 
 const stats = [
   { num: 86, suffix: "+", label: "Proiecte livrate", id: "001" },
   { num: 80, suffix: "%", label: "Colaborări repetate", id: "002" },
-  { num: 32, suffix: "", label: "Premii în industrie", id: "003" },
+  { num: 32, suffix: "", label: "Lansări și campanii", id: "003" },
   { num: 89, suffix: "%", label: "Rată de retenție clienți", id: "004" }
 ]
 
 const blogPosts = [
   {
-    title: "Cum să începi și să crești o carieră în web design",
-    date: "8 Apr 2022",
-    link: "/blog/starting-a-career-in-web-design"
+    title: "Cum îți dai seama că brandul tău nu mai comunică suficient de clar",
+    date: "8 Apr 2026",
+    link: "/blog/brandul-pare-mai-mic"
   },
   {
-    title: "Cum creezi un landing page care performează",
-    date: "15 Mar 2022",
-    link: "/blog/create-a-landing-page-that-performs-great"
+    title: "Ce trebuie să facă o pagină de prezentare bună",
+    date: "15 Mar 2026",
+    link: "/blog/landing-page-birou-vanzari"
   },
   {
-    title: "Cum se pot pregăti designerii pentru viitor?",
-    date: "28 Feb 2022",
-    link: "/blog/how-can-designers-prepare-for-the-future"
+    title: "De ce un brand are nevoie de reguli, nu doar de gust",
+    date: "28 Feb 2026",
+    link: "/blog/reguli-brand"
   },
 ]
 
 function ProjectCard({ project, index, total, cardRef }) {
   return (
-    <div 
+    <div
       ref={cardRef}
       className="project-card-wrapper"
       data-index={index}
@@ -219,31 +272,7 @@ function ProjectCard({ project, index, total, cardRef }) {
         </div>
         <div className="project-card-body">
           <div className="project-card-image">
-            {project.video ? (
-              <>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={
-                  project.videoCrop != null
-                    ? { '--video-scale': project.videoCrop }
-                    : undefined
-                }
-              >
-                <source src={project.video} type="video/mp4" />
-              </video>
-                <div className="project-card-video-overlay">
-                  <span className="project-card-play">
-                    <span className="play-icon">▶</span>
-                    <span>Vezi proiectul</span>
-                  </span>
-                </div>
-              </>
-            ) : (
-              project.image && <img src={project.image} alt={project.title} />
-            )}
+            {project.image && <img src={project.image} alt={project.title} />}
           </div>
           <ul className="project-card-list" style={{ color: project.textColor }}>
             {project.tags.map((tag, i) => (
@@ -258,17 +287,17 @@ function ProjectCard({ project, index, total, cardRef }) {
 
 function ProjectsSection({ projects }) {
   const cardRefs = useRef([])
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const cards = cardRefs.current
       const stickyTop = 60
-      
+
       cards.forEach((card, index) => {
         if (!card) return
         const rect = card.getBoundingClientRect()
         const isPinned = rect.top <= stickyTop + 5
-        
+
         let stackedCount = 0
         for (let i = index + 1; i < cards.length; i++) {
           const nextCard = cards[i]
@@ -277,10 +306,10 @@ function ProjectsSection({ projects }) {
             if (nextRect.top <= stickyTop + 20) stackedCount++
           }
         }
-        
+
         const scale = Math.max(0.85, 1 - (stackedCount * 0.05))
         const translateY = stackedCount * -10
-        
+
         if (isPinned && stackedCount > 0) {
           card.style.transform = `scale(${scale}) translateY(${translateY}px)`
           card.style.opacity = Math.max(0.6, 1 - (stackedCount * 0.15))
@@ -290,25 +319,28 @@ function ProjectsSection({ projects }) {
         }
       })
     }
-    
+
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  
+
   return (
     <section className="projects">
       <div className="container">
         <div className="projects-header">
           <span className="section-tag">SERVICII</span>
-          <h2 className="projects-title">Ce facem cel mai bine</h2>
+          <h2 className="projects-title">Ce construim</h2>
+          <p className="projects-subtitle">
+            Combinăm strategie, design, conținut, tehnologie și AI pentru a transforma ideile în branduri clare, prezențe digitale coerente și sisteme care pot crește.
+          </p>
         </div>
       </div>
       <div className="projects-stack">
         {projects.map((project, index) => (
-          <ProjectCard 
-            key={project.id} 
-            project={project} 
+          <ProjectCard
+            key={project.id}
+            project={project}
             index={index}
             total={projects.length}
             cardRef={el => cardRefs.current[index] = el}
@@ -356,8 +388,10 @@ function PerformanceSection() {
         <div className="performance-layout">
           <div className="performance-left">
             <span className="section-tag">PERFORMANȚĂ</span>
-            <h2 className="performance-title">Dovada din spatele muncii noastre</h2>
-            <p className="performance-subtitle">De la primele lansări la colaborări de lungă durată, suntem de încredere să livrăm la timp și la calitate.</p>
+            <h2 className="performance-title">Rezultate susținute de proces</h2>
+            <p className="performance-subtitle">
+              Lucrăm cu strategie, etape clare și livrabile ușor de folosit, astfel încât fiecare proiect să poată fi lansat, măsurat și dezvoltat mai departe fără confuzie.
+            </p>
           </div>
           <div className="performance-right">
             {stats.map((stat, index) => (
@@ -401,17 +435,19 @@ function PlanCard({ plan, isOpen, onToggle }) {
                   <li key={i}>{f}</li>
                 ))}
               </ul>
-              <div className="plan-expandable-extras">
-                {plan.extras.map((e, i) => (
-                  <div key={i} className="plan-extra-item">
-                    <span className="plan-extra-icon">+</span>
-                    <em>{e}</em>
-                  </div>
-                ))}
-              </div>
+              {plan.extras.length > 0 && (
+                <div className="plan-expandable-extras">
+                  {plan.extras.map((e, i) => (
+                    <div key={i} className="plan-extra-item">
+                      <span className="plan-extra-icon">+</span>
+                      <em>{e}</em>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="plan-expandable-footer">
-              <a href="/contact" className="plan-expandable-cta">ÎNCEPE ACUM</a>
+              <a href="/contact" className="plan-expandable-cta">{plan.cta}</a>
               <div className="plan-expandable-meta">
                 <span className="plan-expandable-timeline">Durată</span>
                 <span className="plan-expandable-timeline-value">{plan.timeline}</span>
@@ -427,24 +463,31 @@ function PlanCard({ plan, isOpen, onToggle }) {
 
 function PricingSection() {
   const [openPlan, setOpenPlan] = useState(null)
-  
+
   return (
     <section className="pricing-section">
       <div className="container">
         <div className="pricing-header">
-          <span className="section-tag">PREȚURI</span>
-          <h2 className="pricing-title">Planuri construite pe măsura proiectului tău</h2>
-          <p className="pricing-subtitle">Fiecare plan îți oferă claritate asupra scopului, funcționalităților și livrabilelor.</p>
+          <span className="section-tag">PACHETE</span>
+          <h2 className="pricing-title">Colaborări construite în jurul obiectivelor tale</h2>
+          <div className="pricing-subtitle">
+            <p>Fiecare business se află într-o etapă diferită. De aceea, pachetele noastre sunt gândite ca puncte de pornire, nu ca soluții rigide.</p>
+            <p>Pornim de la obiectivul tău — lansare, creștere, repoziționare, vizibilitate, automatizare sau scalare — și adaptăm livrabilele în funcție de nevoile reale ale businessului.</p>
+          </div>
         </div>
         <div className="pricing-expandable-list">
           {plans.map((plan) => (
-            <PlanCard 
-              key={plan.id} 
-              plan={plan} 
+            <PlanCard
+              key={plan.id}
+              plan={plan}
               isOpen={openPlan === plan.id}
               onToggle={() => setOpenPlan(openPlan === plan.id ? null : plan.id)}
             />
           ))}
+        </div>
+        <div className="pricing-note">
+          <p>Pachetele pot fi adaptate în funcție de etapa businessului, obiectivele comerciale, buget, echipă, industrie și nivelul de suport necesar.</p>
+          <p>Putem construi o colaborare concentrată pe o singură direcție — branding, social media, website, SEO sau AI — sau un sistem integrat care le conectează într-un plan coerent de creștere.</p>
         </div>
       </div>
     </section>
@@ -454,7 +497,6 @@ function PricingSection() {
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
       <section className="hero">
         <div className="container">
           <div className="hero-top">
@@ -463,28 +505,30 @@ export default function Home() {
             </div>
             <div className="status-badge">
               <span className="status-dot"></span>
-              disponibil pentru proiecte noi
+              disponibili pentru proiecte noi
             </div>
           </div>
           <div className="hero-headline">
             <HeadingCycler
-              heading="Departamentul de"
+              heading=".departamentul de"
               word1="branding"
               word2="marketing"
-              word3="design"
-              word4="development"
+              word3="social media"
+              word4="digital"
               word5="AI"
               color1="#FF6B00"
-              color2="#FFFFFF"
-              color3="#FFD000"
-              color4="#4ECDC4"
+              color2="#4400FF"
+              color3="#E1306C"
+              color4="#FFD000"
               color5="#7C3AED"
               intervalS={2}
               animationS={0.3}
             />
           </div>
           <div className="hero-bottom">
-            <p className="hero-description">Experiențe digitale care conectează, scalează și performează.</p>
+            <div className="hero-description">
+              <p>Branding, marketing, social media, web, SEO și AI pentru businessuri care vor mai multă claritate, vizibilitate și creștere coerentă.</p>
+            </div>
             <a href="/contact" className="hero-cta">
               <span>Hai să vorbim</span>
               <span className="hero-cta-arrow">↗</span>
@@ -493,39 +537,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video Showreel */}
       <section className="video-section">
         <div className="video-wrapper">
-          <video autoPlay muted loop playsInline>
-            <source src="/images/abstract_head.mp4" type="video/mp4" />
+          <video autoPlay muted loop playsInline aria-hidden="true">
+            <source src={headAnimation} type="video/mp4" />
           </video>
           <div className="video-overlay">
-            <span className="video-tag">SHOWREEL 2025</span>
+            <span className="video-tag">ARHIVĂ VIZUALĂ / 2026</span>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
       <ProjectsSection projects={projects} />
-
-      {/* Performance Section */}
       <PerformanceSection />
-
-      {/* Pricing Section */}
       <PricingSection />
 
-      {/* About Section */}
       <section className="about">
         <div className="container">
           <span className="section-label">.despre noi</span>
-          <p className="about-text">
-            construim experiențe care aduc valoare oamenilor și celebrează funcția deasupra formei. lăsăm ego-ul deoparte, dăm libertate creativității și facem primul pas mic spre o lume mai bună
-          </p>
+          <div className="about-text">
+            <p>Construim sisteme de brand, marketing și digital pentru businessuri care vor să comunice mai clar, să arate mai coerent și să crească mai inteligent.</p>
+            <p>Lucrăm la intersecția dintre strategie, design, conținut, tehnologie și AI.</p>
+          </div>
           <Button label="despre noi" link="/about" />
         </div>
       </section>
 
-      {/* Blog Section */}
       <section className="blog">
         <div className="container">
           <span className="section-label">.ultimele trei note</span>
@@ -537,16 +574,15 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <Button label="vezi blogul" link="/notes" />
+          <Button label="vezi notele" link="/notes" />
         </div>
       </section>
 
-      {/* Contact CTA Section */}
       <section className="contact-cta">
         <div className="container">
           <span className="section-label">.salut</span>
-          <h2 className="contact-cta-title">Hai să creăm ceva extraordinar împreună</h2>
-          <p className="contact-cta-text">Suntem deschiși pentru proiecte noi, scrie-ne să vedem cum putem colabora</p>
+          <h2 className="contact-cta-title">Hai să vorbim despre proiectul tău</h2>
+          <p className="contact-cta-text">Spune-ne ce vrei să construiești, unde ești acum și ce ai nevoie să funcționeze mai bine — brand, marketing, social media, website, SEO sau AI.</p>
           <Link to="/contact" className="btn-primary btn-large">contactează-ne</Link>
         </div>
       </section>
