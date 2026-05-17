@@ -426,7 +426,7 @@ Scrie-ne ce vrei să construiești, ce nu mai funcționează și ce rezultat vre
 ### Contact Details
 
 Email  
-hello@departamentuldebranding.ro
+office@departamentul-de-branding.ro
 
 Locație  
 România / remote
@@ -436,4 +436,6 @@ Disponibili pentru proiecte noi
 
 Ne găsești și aici  
 LinkedIn  
+Facebook  
+TikTok  
 Instagram

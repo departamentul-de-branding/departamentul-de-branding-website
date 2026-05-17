@@ -1,9 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import '../framer/styles.css'
 import './App.css'
-
-import Footer from '../framer/footer'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -65,9 +63,28 @@ function MetaManager() {
   return null
 }
 
+function HashScroll() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const target = document.getElementById(location.hash.slice(1))
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [location.pathname, location.hash])
+
+  return null
+}
+
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location.pathname])
+
   return (
-    <header className="header">
+    <header className={`header ${isMenuOpen ? 'is-menu-open' : ''}`}>
       <div className="container header-inner">
         <div className="header-left">
           <Link to="/" className="logo">.departamentul de<br /><span className="logo-accent">branding</span></Link>
@@ -78,7 +95,28 @@ function Header() {
             <Link to="/contact" className="nav-link">contact</Link>
           </nav>
         </div>
-        <a href="/contact" className="btn-primary">contactează-ne</a>
+        <div className="header-actions">
+          <a href="/contact" className="btn-primary header-cta">contactează-ne</a>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label={isMenuOpen ? 'Închide meniul' : 'Deschide meniul'}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
+      <div className="mobile-menu">
+        <nav className="mobile-menu-nav" aria-label="Meniu mobil">
+          <Link to="/projects" className="mobile-menu-link">servicii</Link>
+          <Link to="/about" className="mobile-menu-link">despre</Link>
+          <Link to="/notes" className="mobile-menu-link">note</Link>
+          <Link to="/contact" className="mobile-menu-link">contact</Link>
+        </nav>
+        <Link to="/contact" className="mobile-menu-cta">contactează-ne</Link>
       </div>
     </header>
   )
@@ -114,6 +152,7 @@ export default function App() {
         </div>
         <div className="bg-grain" />
         <MetaManager />
+        <HashScroll />
         <Header />
         <main>
           <Routes>
@@ -121,6 +160,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/blog" element={<Notes />} />
+            <Route path="/blog/*" element={<Notes />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>

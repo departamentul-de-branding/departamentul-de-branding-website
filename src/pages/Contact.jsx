@@ -17,7 +17,7 @@ export default function Contact() {
             <div className="contact-info">
               <div className="contact-item">
                 <span className="contact-label">Email</span>
-                <a href="mailto:hello@departamentuldebranding.ro" className="contact-value">hello@departamentuldebranding.ro</a>
+                <a href="mailto:office@departamentul-de-branding.ro" className="contact-value">office@departamentul-de-branding.ro</a>
               </div>
 
               <div className="contact-item">
@@ -37,8 +37,10 @@ export default function Contact() {
             <div className="contact-socials">
               <span className="contact-label">Ne găsești și aici</span>
               <div className="social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">Instagram</a>
+                <a href="https://www.linkedin.com/company/departamentul-de-branding" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
+                <a href="https://www.facebook.com/profile.php?id=61589861304888" target="_blank" rel="noopener noreferrer" className="social-link">Facebook</a>
+                <a href="https://www.tiktok.com/@departamentuldebranding?_r=1&_t=ZN-96LtIYzsv9a" target="_blank" rel="noopener noreferrer" className="social-link">TikTok</a>
+                <a href="https://www.instagram.com/departamentuldebranding" target="_blank" rel="noopener noreferrer" className="social-link">Instagram</a>
               </div>
             </div>
           </div>

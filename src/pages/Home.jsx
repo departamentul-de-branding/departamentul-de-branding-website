@@ -225,28 +225,39 @@ const plans = [
   }
 ]
 
-const stats = [
-  { num: 86, suffix: "+", label: "Proiecte livrate", id: "001" },
-  { num: 80, suffix: "%", label: "Colaborări repetate", id: "002" },
-  { num: 32, suffix: "", label: "Lansări și campanii", id: "003" },
-  { num: 89, suffix: "%", label: "Rată de retenție clienți", id: "004" }
-]
-
 const blogPosts = [
   {
     title: "Cum îți dai seama că brandul tău nu mai comunică suficient de clar",
     date: "8 Apr 2026",
-    link: "/blog/brandul-pare-mai-mic"
+    link: "/notes#brandul-pare-mai-mic"
   },
   {
     title: "Ce trebuie să facă o pagină de prezentare bună",
     date: "15 Mar 2026",
-    link: "/blog/landing-page-birou-vanzari"
+    link: "/notes#landing-page-birou-vanzari"
   },
   {
     title: "De ce un brand are nevoie de reguli, nu doar de gust",
     date: "28 Feb 2026",
-    link: "/blog/reguli-brand"
+    link: "/notes#reguli-brand"
+  },
+]
+
+const latestNotes = [
+  {
+    title: "Cum îți dai seama că brandul tău nu mai comunică suficient de clar",
+    date: "8 Apr 2026",
+    link: "/notes#brandul-pare-mai-mic"
+  },
+  {
+    title: "Ce trebuie să facă o pagină de prezentare bună",
+    date: "15 Mar 2026",
+    link: "/notes#landing-page-birou-vanzari"
+  },
+  {
+    title: "De ce un brand are nevoie de reguli, nu doar de gust",
+    date: "28 Feb 2026",
+    link: "/notes#reguli-brand"
   },
 ]
 
@@ -351,67 +362,6 @@ function ProjectsSection({ projects }) {
   )
 }
 
-function AnimatedNumber({ target, suffix, duration = 2000 }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const hasAnimated = useRef(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true
-          const start = performance.now()
-          const animate = (now) => {
-            const elapsed = now - start
-            const progress = Math.min(elapsed / duration, 1)
-            const eased = 1 - Math.pow(1 - progress, 3)
-            setCount(Math.round(eased * target))
-            if (progress < 1) requestAnimationFrame(animate)
-          }
-          requestAnimationFrame(animate)
-        }
-      },
-      { threshold: 0.3 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [target, duration])
-
-  return <span ref={ref}>{count}{suffix}</span>
-}
-
-function PerformanceSection() {
-  return (
-    <section className="performance">
-      <div className="container">
-        <div className="performance-layout">
-          <div className="performance-left">
-            <span className="section-tag">PERFORMANȚĂ</span>
-            <h2 className="performance-title">Rezultate susținute de proces</h2>
-            <p className="performance-subtitle">
-              Lucrăm cu strategie, etape clare și livrabile ușor de folosit, astfel încât fiecare proiect să poată fi lansat, măsurat și dezvoltat mai departe fără confuzie.
-            </p>
-          </div>
-          <div className="performance-right">
-            {stats.map((stat, index) => (
-              <div key={stat.id} className="stat-row" style={{ '--delay': `${index * 0.1}s` }}>
-                <div className="stat-number">
-                  <AnimatedNumber target={stat.num} suffix={stat.suffix} />
-                </div>
-                <div className="stat-info">
-                  <span className="stat-label">{stat.label}</span>
-                  <span className="stat-id">//{stat.id}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function PlanCard({ plan, isOpen, onToggle }) {
   return (
     <div className={`plan-expandable ${isOpen ? 'is-open' : ''}`}>
@@ -430,9 +380,13 @@ function PlanCard({ plan, isOpen, onToggle }) {
           <p className="plan-expandable-tagline"><em>{plan.tagline}</em></p>
           <div className="plan-expandable-content">
             <div className="plan-expandable-features">
+              <span className="plan-features-label">Livrabile incluse</span>
               <ul>
                 {plan.features.map((f, i) => (
-                  <li key={i}>{f}</li>
+                  <li key={i}>
+                    <span className="plan-feature-index">{String(i + 1).padStart(2, '0')}</span>
+                    <span>{f}</span>
+                  </li>
                 ))}
               </ul>
               {plan.extras.length > 0 && (
@@ -447,7 +401,6 @@ function PlanCard({ plan, isOpen, onToggle }) {
               )}
             </div>
             <div className="plan-expandable-footer">
-              <a href="/contact" className="plan-expandable-cta">{plan.cta}</a>
               <div className="plan-expandable-meta">
                 <span className="plan-expandable-timeline">Durată</span>
                 <span className="plan-expandable-timeline-value">{plan.timeline}</span>
@@ -549,7 +502,6 @@ export default function Home() {
       </section>
 
       <ProjectsSection projects={projects} />
-      <PerformanceSection />
       <PricingSection />
 
       <section className="about">
@@ -567,11 +519,11 @@ export default function Home() {
         <div className="container">
           <span className="section-label">.ultimele trei note</span>
           <div className="blog-list">
-            {blogPosts.map((post, index) => (
-              <a key={index} href={post.link} className="blog-post">
+            {latestNotes.map((post, index) => (
+              <Link key={index} to={post.link} className="blog-post">
                 <span className="blog-post-title">{post.title}</span>
                 <span className="blog-post-date">{post.date}</span>
-              </a>
+              </Link>
             ))}
           </div>
           <Button label="vezi notele" link="/notes" />
