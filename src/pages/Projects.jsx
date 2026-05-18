@@ -77,7 +77,7 @@ export default function Projects() {
           <span className="section-tag">// SERVICII</span>
           <h1 className="page-title">Servicii și direcții de lucru</h1>
           <p className="page-subtitle">
-            Branding, marketing, social media, web, SEO și AI — conectate într-un sistem coerent pentru vizibilitate, consistență și creștere.
+            Branding, marketing, social media, web, SEO și AI conectate într-un sistem coerent pentru vizibilitate, consistență și creștere.
           </p>
         </div>
       </section>
@@ -86,9 +86,8 @@ export default function Projects() {
         <div className="container">
           <div className="work-grid">
             {projects.map((project) => (
-              <Link
+              <div
                 key={project.id}
-                to={project.link}
                 className="work-card"
                 style={{ background: project.background, color: project.textColor }}
               >
@@ -109,7 +108,7 @@ export default function Projects() {
                   <span className="work-card-category" style={{ color: project.textColor, opacity: 0.5 }}>{project.category}</span>
                 </div>
                 <div className="work-card-image"></div>
-              </Link>
+              </div>
             ))}
           </div>
 

@@ -6,7 +6,7 @@ export default function Contact() {
           <span className="section-label">.contact</span>
           <h1 className="page-title">Hai să vorbim despre proiectul tău.</h1>
           <p className="page-subtitle">
-            Scrie-ne ce vrei să construiești, ce nu mai funcționează și ce rezultat vrei să obții — mai multă claritate, mai multă vizibilitate, un website mai bun, social media, SEO, automatizări sau o strategie completă de creștere.
+            Scrie-ne ce vrei să construiești, ce nu mai funcționează și ce rezultat vrei să obții: mai multă claritate, mai multă vizibilitate, un website mai bun, social media, SEO, automatizări sau o strategie completă de creștere.
           </p>
         </div>
       </section>

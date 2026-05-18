@@ -8,7 +8,7 @@ export default function About() {
           <span className="section-label">.despre noi</span>
           <h1 className="page-title">Un studio de marketing, branding și digital pentru businessuri care vor mai multă claritate, vizibilitate și control.</h1>
           <p className="page-subtitle">
-            Strategie, identitate vizuală, conținut, website-uri, SEO și AI — construite ca un sistem coerent, nu ca servicii izolate.
+            Strategie, identitate vizuală, conținut, website-uri, SEO și AI construite ca un sistem coerent, nu ca servicii izolate.
           </p>
         </div>
       </section>

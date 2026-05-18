@@ -1,68 +1,12 @@
-const blogPosts = [
-  {
-    id: "brandul-pare-mai-mic",
-    title: "Cum îți dai seama că brandul tău nu mai comunică suficient de clar",
-    date: "8 Apr 2026",
-    excerpt: "Semne vizuale și de comunicare care pot reduce încrederea, chiar și atunci când produsul este bun.",
-    link: "/notes#brandul-pare-mai-mic"
-  },
-  {
-    id: "landing-page-birou-vanzari",
-    title: "Ce trebuie să facă o pagină de prezentare bună",
-    date: "15 Mar 2026",
-    excerpt: "Cum structurezi mesajul, oferta și acțiunea următoare pentru ca vizitatorii să înțeleagă rapid ce au de făcut.",
-    link: "/notes#landing-page-birou-vanzari"
-  },
-  {
-    id: "reguli-brand",
-    title: "De ce un brand are nevoie de reguli, nu doar de gust",
-    date: "28 Feb 2026",
-    excerpt: "Un sistem vizual bun nu te limitează. Te ajută să arăți coerent peste tot, mai repede.",
-    link: "/notes#reguli-brand"
-  },
-  {
-    id: "social-media-fara-improvizatie",
-    title: "Social media fără improvizație de la o zi la alta",
-    date: "10 Feb 2026",
-    excerpt: "Cum organizezi ideile, campaniile și postările într-un calendar care poate fi susținut pe termen lung.",
-    link: "/notes#social-media-fara-improvizatie"
-  },
-  {
-    id: "ce-rescrii-in-rebrand",
-    title: "Ce păstrezi, ce tai și ce rescrii într-un rebrand",
-    date: "25 Ian 2026",
-    excerpt: "Un ghid scurt pentru deciziile grele: active, ton, culori, logo, mesaje și priorități.",
-    link: "/notes#ce-rescrii-in-rebrand"
-  },
-  {
-    id: "ai-in-marketing",
-    title: "Cum folosești AI în marketing fără să pierzi vocea brandului",
-    date: "12 Ian 2026",
-    excerpt: "Automatizarea poate ajuta, dar direcția, tonul și deciziile trebuie să rămână clare.",
-    link: "/notes#ai-in-marketing"
-  },
-  {
-    id: "seo-nu-inseamna-doar-articole",
-    title: "SEO nu înseamnă doar articole pe blog",
-    date: "5 Ian 2026",
-    excerpt: "De la structură tehnică la conținut și intenție de căutare, vizibilitatea organică începe cu un sistem bun.",
-    link: "/notes#seo-nu-inseamna-doar-articole"
-  },
-  {
-    id: "website-brosura-sau-vanzare",
-    title: "Website-ul tău este o broșură sau un canal de vânzare?",
-    date: "18 Dec 2025",
-    excerpt: "Diferența dintre un site care doar arată bine și unul care explică, convinge și convertește.",
-    link: "/notes#website-brosura-sau-vanzare"
-  },
-]
+import { Link, useParams } from 'react-router-dom'
+import { articles } from '../data/articles'
 
-export default function Notes() {
+function ArticlesList() {
   return (
     <div className="page-content">
       <section className="page-hero">
         <div className="container">
-          <span className="section-label">.note</span>
+          <span className="section-label">.articole</span>
           <h1 className="page-title">Idei despre brand, marketing, conținut, digital și AI.</h1>
           <p className="page-subtitle">
             Articole scurte despre cum un business devine mai clar, mai vizibil și mai eficient prin strategie, comunicare și tehnologie.
@@ -73,19 +17,86 @@ export default function Notes() {
       <section className="page-section">
         <div className="container">
           <div className="blog-grid">
-            {blogPosts.map((post) => (
-              <a key={post.id} id={post.id} href={post.link} className="blog-card">
+            {articles.map((post) => (
+              <Link key={post.slug} to={`/notes/${post.slug}`} className="blog-card">
+                <span className="blog-card-kicker">ARTICOL</span>
                 <div className="blog-card-content">
                   <span className="blog-card-date">{post.date}</span>
                   <h3 className="blog-card-title">{post.title}</h3>
                   <p className="blog-card-excerpt">{post.excerpt}</p>
                 </div>
                 <div className="blog-card-arrow">→</div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </section>
     </div>
   )
+}
+
+function ArticleDetail({ article }) {
+  const readingTime = `${Math.max(4, Math.ceil(article.content.join(' ').split(/\s+/).length / 180))} min citire`
+
+  return (
+    <div className="page-content article-page">
+      <article>
+        <section className="page-hero article-hero">
+          <div className="container">
+            <div className="article-topline">
+              <Link to="/notes" className="article-back">← înapoi la articole</Link>
+              <span>{article.date}</span>
+              <span>{readingTime}</span>
+            </div>
+            <h1 className="page-title">{article.title}</h1>
+            <p className="page-subtitle">{article.excerpt}</p>
+          </div>
+        </section>
+
+        <section className="page-section">
+          <div className="container">
+            <div className="article-layout">
+              <aside className="article-aside" aria-label="Detalii articol">
+                <span className="article-aside-label">ARTICOL</span>
+                <span>{article.date}</span>
+                <span>{readingTime}</span>
+              </aside>
+              <div className="article-content">
+                {article.content.map((paragraph, index) => (
+                  <p key={paragraph} data-index={String(index + 1).padStart(2, '0')}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  )
+}
+
+export default function Notes() {
+  const { slug } = useParams()
+
+  if (!slug) {
+    return <ArticlesList />
+  }
+
+  const article = articles.find((post) => post.slug === slug)
+
+  if (!article) {
+    return (
+      <div className="page-content">
+        <section className="page-hero">
+          <div className="container">
+            <span className="section-label">.articole</span>
+            <h1 className="page-title">Articolul nu a fost găsit.</h1>
+            <p className="page-subtitle">Pagina pe care o cauți nu există sau a fost mutată.</p>
+            <Link to="/notes" className="btn-secondary article-not-found-link">vezi articolele</Link>
+          </div>
+        </section>
+      </div>
+    )
+  }
+
+  return <ArticleDetail article={article} />
 }

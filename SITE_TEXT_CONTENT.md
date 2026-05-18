@@ -11,7 +11,7 @@ branding
 
 servicii  
 despre  
-note  
+articole  
 contact
 
 ### Primary CTA
@@ -23,7 +23,7 @@ contactează-ne
 .departamentul de branding  
 servicii  
 despre  
-note  
+articole  
 contact  
 contactează-ne
 
@@ -61,7 +61,7 @@ Combinăm strategie, design, conținut, tehnologie și AI pentru a transforma id
 2026  
 Branding & Identitate
 
-Construim identități de brand clare, coerente și ușor de recunoscut — de la poziționare și mesaj până la sistem vizual complet.
+Construim identități de brand clare, coerente și ușor de recunoscut, de la poziționare și mesaj până la sistem vizual complet.
 
 Strategie de brand și poziționare  
 Arhitectură de mesaje și tone of voice  
@@ -87,7 +87,7 @@ Calendar de implementare și raportare
 2026  
 Social Media
 
-Gestionăm complet prezența brandului tău în social media — de la strategie și creație până la interacțiunea cu audiența și optimizarea rezultatelor.
+Gestionăm complet prezența brandului tău în social media, de la strategie și creație până la interacțiunea cu audiența și optimizarea rezultatelor.
 
 Strategie de conținut: target, obiective, tone of voice și direcție vizuală  
 Plan editorial lunar și copywriting pentru postări  
@@ -157,7 +157,7 @@ Colaborări construite în jurul obiectivelor tale
 
 Fiecare business se află într-o etapă diferită. De aceea, pachetele noastre sunt gândite ca puncte de pornire, nu ca soluții rigide.
 
-Pornim de la obiectivul tău — lansare, creștere, repoziționare, vizibilitate, automatizare sau scalare — și adaptăm livrabilele în funcție de nevoile reale ale businessului.
+Pornim de la obiectivul tău: lansare, creștere, repoziționare, vizibilitate, automatizare sau scalare, și adaptăm livrabilele în funcție de nevoile reale ale businessului.
 
 #### Launch
 
@@ -253,7 +253,7 @@ CTA: Scalează cu AI
 
 Pachetele pot fi adaptate în funcție de etapa businessului, obiectivele comerciale, buget, echipă, industrie și nivelul de suport necesar.
 
-Putem construi o colaborare concentrată pe o singură direcție — branding, social media, website, SEO sau AI — sau un sistem integrat care le conectează într-un plan coerent de creștere.
+Putem construi o colaborare concentrată pe o singură direcție: branding, social media, website, SEO sau AI, sau un sistem integrat care le conectează într-un plan coerent de creștere.
 
 ### About Preview
 
@@ -267,13 +267,13 @@ CTA: despre noi
 
 ### Blog Preview
 
-.ultimele trei note
+.ultimele trei articole
 
-Cum îți dai seama că brandul tău nu mai comunică suficient de clar — 8 Apr 2026  
-Ce trebuie să facă o pagină de prezentare bună — 15 Mar 2026  
-De ce un brand are nevoie de reguli, nu doar de gust — 28 Feb 2026
+Cum îți dai seama că brandul tău nu mai comunică suficient de clar, 8 Apr 2026  
+Ce trebuie să facă o pagină de prezentare bună, 15 Mar 2026  
+De ce un brand are nevoie de reguli, nu doar de gust, 28 Feb 2026
 
-CTA: vezi notele
+CTA: vezi articolele
 
 ### Contact CTA
 
@@ -281,7 +281,7 @@ CTA: vezi notele
 
 Hai să vorbim despre proiectul tău
 
-Spune-ne ce vrei să construiești, unde ești acum și ce ai nevoie să funcționeze mai bine — brand, marketing, social media, website, SEO sau AI.
+Spune-ne ce vrei să construiești, unde ești acum și ce ai nevoie să funcționeze mai bine: brand, marketing, social media, website, SEO sau AI.
 
 CTA: contactează-ne
 
@@ -293,7 +293,7 @@ CTA: contactează-ne
 
 Servicii și direcții de lucru
 
-Branding, marketing, social media, web, SEO și AI — conectate într-un sistem coerent pentru vizibilitate, consistență și creștere.
+Branding, marketing, social media, web, SEO și AI conectate într-un sistem coerent pentru vizibilitate, consistență și creștere.
 
 ### Service Cards
 
@@ -346,7 +346,7 @@ Discută un proiect
 
 Un studio de marketing, branding și digital pentru businessuri care vor mai multă claritate, vizibilitate și control.
 
-Strategie, identitate vizuală, conținut, website-uri, SEO și AI — construite ca un sistem coerent, nu ca servicii izolate.
+Strategie, identitate vizuală, conținut, website-uri, SEO și AI construite ca un sistem coerent, nu ca servicii izolate.
 
 ### Content
 
@@ -377,40 +377,40 @@ La final, primești un sistem coerent, ușor de folosit și pregătit să fie de
 
 CTA: Hai să vorbim
 
-## Notes Page
+## Articles Page
 
 ### Hero
 
-.note
+.articole
 
 Idei despre brand, marketing, conținut, digital și AI.
 
 Articole scurte despre cum un business devine mai clar, mai vizibil și mai eficient prin strategie, comunicare și tehnologie.
 
-### Notes
+### Articole
 
-8 Apr 2026 — Cum îți dai seama că brandul tău nu mai comunică suficient de clar  
+8 Apr 2026, Cum îți dai seama că brandul tău nu mai comunică suficient de clar  
 Semne vizuale și de comunicare care pot reduce încrederea, chiar și atunci când produsul este bun.
 
-15 Mar 2026 — Ce trebuie să facă o pagină de prezentare bună  
+15 Mar 2026, Ce trebuie să facă o pagină de prezentare bună  
 Cum structurezi mesajul, oferta și acțiunea următoare pentru ca vizitatorii să înțeleagă rapid ce au de făcut.
 
-28 Feb 2026 — De ce un brand are nevoie de reguli, nu doar de gust  
+28 Feb 2026, De ce un brand are nevoie de reguli, nu doar de gust  
 Un sistem vizual bun nu te limitează. Te ajută să arăți coerent peste tot, mai repede.
 
-10 Feb 2026 — Social media fără improvizație de la o zi la alta  
+10 Feb 2026, Social media fără improvizație de la o zi la alta  
 Cum organizezi ideile, campaniile și postările într-un calendar care poate fi susținut pe termen lung.
 
-25 Ian 2026 — Ce păstrezi, ce tai și ce rescrii într-un rebrand  
+25 Ian 2026, Ce păstrezi, ce tai și ce rescrii într-un rebrand  
 Un ghid scurt pentru deciziile grele: active, ton, culori, logo, mesaje și priorități.
 
-12 Ian 2026 — Cum folosești AI în marketing fără să pierzi vocea brandului  
+12 Ian 2026, Cum folosești AI în marketing fără să pierzi vocea brandului  
 Automatizarea poate ajuta, dar direcția, tonul și deciziile trebuie să rămână clare.
 
-5 Ian 2026 — SEO nu înseamnă doar articole pe blog  
+5 Ian 2026, SEO nu înseamnă doar articole pe blog  
 De la structură tehnică la conținut și intenție de căutare, vizibilitatea organică începe cu un sistem bun.
 
-18 Dec 2025 — Website-ul tău este o broșură sau un canal de vânzare?  
+18 Dec 2025, Website-ul tău este o broșură sau un canal de vânzare?  
 Diferența dintre un site care doar arată bine și unul care explică, convinge și convertește.
 
 ## Contact Page
@@ -421,7 +421,7 @@ Diferența dintre un site care doar arată bine și unul care explică, convinge
 
 Hai să vorbim despre proiectul tău.
 
-Scrie-ne ce vrei să construiești, ce nu mai funcționează și ce rezultat vrei să obții — mai multă claritate, mai multă vizibilitate, un website mai bun, social media, SEO, automatizări sau o strategie completă de creștere.
+Scrie-ne ce vrei să construiești, ce nu mai funcționează și ce rezultat vrei să obții: mai multă claritate, mai multă vizibilitate, un website mai bun, social media, SEO, automatizări sau o strategie completă de creștere.
 
 ### Contact Details
 

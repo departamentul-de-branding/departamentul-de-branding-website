@@ -8,6 +8,7 @@ import About from './pages/About'
 import Notes from './pages/Notes'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
+import { articles } from './data/articles'
 
 const siteUrl = 'https://departamentuldebranding.ro'
 
@@ -25,11 +26,11 @@ const routeMeta = {
     description: 'Un studio de marketing, branding și digital pentru businessuri care vor mai multă claritate, vizibilitate și control.'
   },
   '/notes': {
-    title: 'Note | Brand, Marketing, Digital și AI',
+    title: 'Articole | Brand, Marketing, Digital și AI',
     description: 'Idei despre brand, marketing, conținut, digital și AI pentru businessuri care vor să devină mai clare și mai vizibile.'
   },
   '/blog': {
-    title: 'Note | Brand, Marketing, Digital și AI',
+    title: 'Articole | Brand, Marketing, Digital și AI',
     description: 'Idei despre brand, marketing, conținut, digital și AI pentru businessuri care vor să devină mai clare și mai vizibile.'
   },
   '/contact': {
@@ -47,7 +48,16 @@ function MetaManager() {
   const location = useLocation()
 
   useEffect(() => {
-    const meta = routeMeta[location.pathname] || routeMeta['/']
+    const articleSlug = location.pathname.startsWith('/notes/')
+      ? location.pathname.split('/').filter(Boolean)[1]
+      : null
+    const article = articleSlug ? articles.find((post) => post.slug === articleSlug) : null
+    const meta = article
+      ? {
+          title: `${article.title} | Departamentul de Branding`,
+          description: article.excerpt
+        }
+      : routeMeta[location.pathname] || routeMeta['/']
     const canonical = `${siteUrl}${location.pathname === '/' ? '/' : location.pathname}`
 
     document.title = meta.title
@@ -91,7 +101,7 @@ function Header() {
           <nav className="nav-desktop">
             <Link to="/projects" className="nav-link">servicii</Link>
             <Link to="/about" className="nav-link">despre</Link>
-            <Link to="/notes" className="nav-link">note</Link>
+            <Link to="/notes" className="nav-link">articole</Link>
             <Link to="/contact" className="nav-link">contact</Link>
           </nav>
         </div>
@@ -113,7 +123,7 @@ function Header() {
         <nav className="mobile-menu-nav" aria-label="Meniu mobil">
           <Link to="/projects" className="mobile-menu-link">servicii</Link>
           <Link to="/about" className="mobile-menu-link">despre</Link>
-          <Link to="/notes" className="mobile-menu-link">note</Link>
+          <Link to="/notes" className="mobile-menu-link">articole</Link>
           <Link to="/contact" className="mobile-menu-link">contact</Link>
         </nav>
         <Link to="/contact" className="mobile-menu-cta">contactează-ne</Link>
@@ -132,7 +142,7 @@ function AppFooter() {
         <nav className="footer-nav">
           <Link to="/projects" className="footer-link">servicii</Link>
           <Link to="/about" className="footer-link">despre</Link>
-          <Link to="/notes" className="footer-link">note</Link>
+          <Link to="/notes" className="footer-link">articole</Link>
           <Link to="/contact" className="footer-link">contact</Link>
         </nav>
         <div className="footer-right">
@@ -159,6 +169,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/notes/:slug" element={<Notes />} />
             <Route path="/blog" element={<Notes />} />
             <Route path="/blog/*" element={<Notes />} />
             <Route path="/contact" element={<Contact />} />

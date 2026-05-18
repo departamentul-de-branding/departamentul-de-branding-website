@@ -3,6 +3,24 @@ import { Link } from 'react-router-dom'
 import HeadingCycler from '../../framer/heading-cycler'
 import Button from '../../framer/button'
 import headAnimation from '../../assets/animation_final.mp4'
+import { latestArticles } from '../data/articles'
+import logo1 from '../../assets/logos/1.svg'
+import logo2 from '../../assets/logos/2.svg'
+import logo3 from '../../assets/logos/3.svg'
+import logo4 from '../../assets/logos/4.svg'
+import logo5 from '../../assets/logos/5.svg'
+import logo6 from '../../assets/logos/6.svg'
+import logo7 from '../../assets/logos/7.svg'
+
+const logoStrip = [
+  { src: logo1, alt: "Logo client 1" },
+  { src: logo2, alt: "Logo client 2" },
+  { src: logo3, alt: "Logo client 3" },
+  { src: logo4, alt: "Logo client 4" },
+  { src: logo5, alt: "Logo client 5" },
+  { src: logo6, alt: "Logo client 6" },
+  { src: logo7, alt: "Logo client 7" },
+]
 
 const projects = [
   {
@@ -14,7 +32,7 @@ const projects = [
     background: "#FF6B00",
     textColor: "#000000",
     image: "/images/service-brand-orange-v2.png",
-    subtitle: "Construim identități de brand clare, coerente și ușor de recunoscut — de la poziționare și mesaj până la sistem vizual complet.",
+    subtitle: "Construim identități de brand clare, coerente și ușor de recunoscut, de la poziționare și mesaj până la sistem vizual complet.",
     tags: [
       "Strategie de brand și poziționare",
       "Arhitectură de mesaje și tone of voice",
@@ -50,7 +68,7 @@ const projects = [
     background: "#E1306C",
     textColor: "#FFFFFF",
     image: "/images/service-social-pink-v2.png",
-    subtitle: "Gestionăm complet prezența brandului tău în social media — de la strategie și creație până la interacțiunea cu audiența și optimizarea rezultatelor.",
+    subtitle: "Gestionăm complet prezența brandului tău în social media, de la strategie și creație până la interacțiunea cu audiența și optimizarea rezultatelor.",
     tags: [
       "Strategie de conținut: target, obiective, tone of voice și direcție vizuală",
       "Plan editorial lunar și copywriting pentru postări",
@@ -269,7 +287,7 @@ function ProjectCard({ project, index, total, cardRef }) {
       data-index={index}
       style={{ '--index': index, '--total': total }}
     >
-      <a href={project.link} className="project-card" style={{ background: project.background }}>
+      <div className="project-card" style={{ background: project.background }}>
         <div className="project-card-header">
           <div className="project-card-meta" style={{ color: project.textColor }}>
             <span>{project.year}</span>
@@ -277,7 +295,6 @@ function ProjectCard({ project, index, total, cardRef }) {
           </div>
           <div className="project-card-title-row">
             <h3 className="project-card-title" style={{ color: project.textColor }}>{project.title}</h3>
-            <span className="project-card-arrow" style={{ color: project.textColor }}>↗</span>
           </div>
           {project.subtitle && <p className="project-card-subtitle" style={{ color: project.textColor }}>{project.subtitle}</p>}
         </div>
@@ -291,7 +308,7 @@ function ProjectCard({ project, index, total, cardRef }) {
             ))}
           </ul>
         </div>
-      </a>
+      </div>
     </div>
   )
 }
@@ -425,7 +442,7 @@ function PricingSection() {
           <h2 className="pricing-title">Colaborări construite în jurul obiectivelor tale</h2>
           <div className="pricing-subtitle">
             <p>Fiecare business se află într-o etapă diferită. De aceea, pachetele noastre sunt gândite ca puncte de pornire, nu ca soluții rigide.</p>
-            <p>Pornim de la obiectivul tău — lansare, creștere, repoziționare, vizibilitate, automatizare sau scalare — și adaptăm livrabilele în funcție de nevoile reale ale businessului.</p>
+            <p>Pornim de la obiectivul tău: lansare, creștere, repoziționare, vizibilitate, automatizare sau scalare, și adaptăm livrabilele în funcție de nevoile reale ale businessului.</p>
           </div>
         </div>
         <div className="pricing-expandable-list">
@@ -440,8 +457,25 @@ function PricingSection() {
         </div>
         <div className="pricing-note">
           <p>Pachetele pot fi adaptate în funcție de etapa businessului, obiectivele comerciale, buget, echipă, industrie și nivelul de suport necesar.</p>
-          <p>Putem construi o colaborare concentrată pe o singură direcție — branding, social media, website, SEO sau AI — sau un sistem integrat care le conectează într-un plan coerent de creștere.</p>
+          <p>Putem construi o colaborare concentrată pe o singură direcție: branding, social media, website, SEO sau AI, sau un sistem integrat care le conectează într-un plan coerent de creștere.</p>
         </div>
+      </div>
+    </section>
+  )
+}
+
+function LogoStrip() {
+  return (
+    <section className="clients-section" aria-label="Branduri și colaborări">
+      <div className="clients-header">
+        <span>.clienți</span>
+      </div>
+      <div className="clients-grid">
+        {logoStrip.map((logo, index) => (
+          <div className={`client-logo client-logo-${index + 1}`} key={logo.alt}>
+            <img src={logo.src} alt={logo.alt} />
+          </div>
+        ))}
       </div>
     </section>
   )
@@ -495,11 +529,10 @@ export default function Home() {
           <video autoPlay muted loop playsInline aria-hidden="true">
             <source src={headAnimation} type="video/mp4" />
           </video>
-          <div className="video-overlay">
-            <span className="video-tag">ARHIVĂ VIZUALĂ / 2026</span>
-          </div>
         </div>
       </section>
+
+      <LogoStrip />
 
       <ProjectsSection projects={projects} />
       <PricingSection />
@@ -517,16 +550,16 @@ export default function Home() {
 
       <section className="blog">
         <div className="container">
-          <span className="section-label">.ultimele trei note</span>
+          <span className="section-label">.ultimele trei articole</span>
           <div className="blog-list">
-            {latestNotes.map((post, index) => (
-              <Link key={index} to={post.link} className="blog-post">
+            {latestArticles.map((post) => (
+              <Link key={post.slug} to={`/notes/${post.slug}`} className="blog-post">
                 <span className="blog-post-title">{post.title}</span>
                 <span className="blog-post-date">{post.date}</span>
               </Link>
             ))}
           </div>
-          <Button label="vezi notele" link="/notes" />
+          <Button label="vezi articolele" link="/notes" />
         </div>
       </section>
 
@@ -534,7 +567,7 @@ export default function Home() {
         <div className="container">
           <span className="section-label">.salut</span>
           <h2 className="contact-cta-title">Hai să vorbim despre proiectul tău</h2>
-          <p className="contact-cta-text">Spune-ne ce vrei să construiești, unde ești acum și ce ai nevoie să funcționeze mai bine — brand, marketing, social media, website, SEO sau AI.</p>
+          <p className="contact-cta-text">Spune-ne ce vrei să construiești, unde ești acum și ce ai nevoie să funcționeze mai bine: brand, marketing, social media, website, SEO sau AI.</p>
           <Link to="/contact" className="btn-primary btn-large">contactează-ne</Link>
         </div>
       </section>
