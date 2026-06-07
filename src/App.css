@@ -282,8 +282,8 @@ body {
   position: relative;
   z-index: 20;
   overflow: hidden;
-  min-height: 190px;
-  padding: 28px 6.2vw 36px;
+  min-height: 168px;
+  padding: 26px 6.2vw 28px;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px) 0 0 / 11.11% 100%,
     #020202;
@@ -308,94 +308,71 @@ body {
   background: rgba(255, 255, 255, 0.22);
 }
 
+.clients-marquee {
+  position: relative;
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+.clients-marquee::before,
+.clients-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 110px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #020202 0%, transparent 100%);
+}
+
+.clients-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #020202 0%, transparent 100%);
+}
+
 .clients-grid {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  grid-template-rows: 96px;
-  min-height: 96px;
-  padding-top: 28px;
-  column-gap: 18px;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  min-height: 82px;
+  gap: 128px;
+  animation: clientsMarquee 34s linear infinite;
+  will-change: transform;
 }
 
 .client-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.68;
+  opacity: 0.96;
   overflow: visible;
-  width: 132px;
-  height: 56px;
+  height: 68px;
   justify-self: center;
+  flex: 0 0 auto;
 }
 
 .client-logo img {
   display: block;
   width: auto;
   height: auto;
-  max-width: 132px;
-  max-height: 56px;
+  max-width: none;
+  max-height: 30px;
   object-fit: contain;
   object-position: center;
-  filter: invert(1) grayscale(1) brightness(0.56) contrast(1.2);
+  filter: none;
   transform: none;
   transform-origin: center;
 }
 
-.client-logo-1 img {
-  transform: scale(1.65);
-}
-
-.client-logo-2 img {
-  transform: scale(1.25);
-}
-
-.client-logo-3 img {
-  transform: scale(1.45);
-}
-
-.client-logo-4 img {
-  transform: scale(1.35);
-}
-
-.client-logo-5 img {
-  transform: scale(1.45);
-}
-
-.client-logo-6 img {
-  transform: scale(1.35);
-}
-
-.client-logo-7 img {
-  transform: scale(1.55);
-}
-
-.client-logo-1 {
-  grid-column: 1;
-}
-
-.client-logo-2 {
-  grid-column: 2;
-}
-
-.client-logo-3 {
-  grid-column: 3;
-}
-
-.client-logo-4 {
-  grid-column: 4;
-}
-
-.client-logo-5 {
-  grid-column: 5;
-}
-
-.client-logo-6 {
-  grid-column: 6;
-}
-
-.client-logo-7 {
-  grid-column: 7;
+@keyframes clientsMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 64px)); }
 }
 
 .hero-headline {
@@ -1659,6 +1636,22 @@ a.contact-value:hover {
   color: #e8a04a;
 }
 
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whatsapp-link:hover {
+  color: #25d366 !important;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .contact-available {
   display: flex;
   align-items: center;
@@ -1944,47 +1937,42 @@ a.contact-value:hover {
   }
 
   .clients-section {
-    min-height: 200px;
-    padding: 22px 20px 36px;
+    min-height: 156px;
+    padding: 22px 20px 28px;
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px) 0 0 / 25% 100%,
       #020202;
   }
 
   .clients-grid {
-    grid-template-columns: repeat(7, minmax(88px, 1fr));
-    grid-template-rows: 74px;
-    min-height: 74px;
-    padding-top: 34px;
-    column-gap: 14px;
-    overflow-x: auto;
-    overflow-y: visible;
-    scrollbar-width: none;
+    min-height: 70px;
+    gap: 82px;
+    animation-duration: 28s;
   }
 
-  .clients-grid::-webkit-scrollbar {
-    display: none;
+  .clients-marquee {
+    margin-top: 24px;
+  }
+
+  .clients-marquee::before,
+  .clients-marquee::after {
+    width: 42px;
   }
 
   .client-logo img {
-    max-width: 84px;
-    max-height: 38px;
+    max-width: none;
+    max-height: 24px;
+    filter: none;
   }
 
   .client-logo {
-    width: 84px;
-    height: 38px;
+    height: 58px;
+    opacity: 0.98;
   }
 
-  .client-logo-1,
-  .client-logo-2,
-  .client-logo-3,
-  .client-logo-4,
-  .client-logo-5,
-  .client-logo-6,
-  .client-logo-7 {
-    grid-column: auto;
-    grid-row: auto;
+  @keyframes clientsMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 41px)); }
   }
 
   .video-wrapper img,

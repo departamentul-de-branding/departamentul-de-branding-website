@@ -4,22 +4,15 @@ import HeadingCycler from '../../framer/heading-cycler'
 import Button from '../../framer/button'
 import headAnimation from '../../assets/animation_final.mp4'
 import { latestArticles } from '../data/articles'
-import logo1 from '../../assets/logos/1.svg'
-import logo2 from '../../assets/logos/2.svg'
-import logo3 from '../../assets/logos/3.svg'
-import logo4 from '../../assets/logos/4.svg'
-import logo5 from '../../assets/logos/5.svg'
-import logo6 from '../../assets/logos/6.svg'
-import logo7 from '../../assets/logos/7.svg'
 
 const logoStrip = [
-  { src: logo1, alt: "Logo client 1" },
-  { src: logo2, alt: "Logo client 2" },
-  { src: logo3, alt: "Logo client 3" },
-  { src: logo4, alt: "Logo client 4" },
-  { src: logo5, alt: "Logo client 5" },
-  { src: logo6, alt: "Logo client 6" },
-  { src: logo7, alt: "Logo client 7" },
+  { src: "/images/client-logos/1.png", alt: "Logo client 1" },
+  { src: "/images/client-logos/2.png", alt: "Logo client 2" },
+  { src: "/images/client-logos/3.png", alt: "Logo client 3" },
+  { src: "/images/client-logos/4.png", alt: "Logo client 4" },
+  { src: "/images/client-logos/5.png", alt: "Logo client 5" },
+  { src: "/images/client-logos/6.png", alt: "Logo client 6" },
+  { src: "/images/client-logos/7.png", alt: "Logo client 7" },
 ]
 
 const projects = [
@@ -465,17 +458,21 @@ function PricingSection() {
 }
 
 function LogoStrip() {
+  const repeatedLogos = [...logoStrip, ...logoStrip]
+
   return (
     <section className="clients-section" aria-label="Branduri și colaborări">
       <div className="clients-header">
         <span>.clienți</span>
       </div>
-      <div className="clients-grid">
-        {logoStrip.map((logo, index) => (
-          <div className={`client-logo client-logo-${index + 1}`} key={logo.alt}>
+      <div className="clients-marquee">
+        <div className="clients-grid">
+          {repeatedLogos.map((logo, index) => (
+          <div className={`client-logo client-logo-${(index % logoStrip.length) + 1}`} key={`${logo.alt}-${index}`}>
             <img src={logo.src} alt={logo.alt} />
           </div>
         ))}
+        </div>
       </div>
     </section>
   )

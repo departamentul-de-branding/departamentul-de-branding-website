@@ -10,7 +10,7 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import { articles } from './data/articles'
 
-const siteUrl = 'https://departamentuldebranding.ro'
+const siteUrl = 'https://departamentul-de-branding.ro'
 
 const routeMeta = {
   '/': {
